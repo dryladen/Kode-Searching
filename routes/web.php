@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TemplatesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
-Route::get('/data',function(){
-    return view('data');
-});
-Route::get('/users',function(){
-    return view('data');
+
+Route::controller(TemplatesController::class)->group(function () {
+    Route::get('/templates', 'index');
+    Route::post('/templates/create', 'store');
+    Route::post('/templates/update/{id}', 'update');
+    Route::post('/templates/delete/{id}', 'destroy');
 });

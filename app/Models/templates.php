@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class templates extends Model
+class Templates extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,10 @@ class templates extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'request_letter',
+        'code',
         'title',
         'description',
+        'request_letter',
         'author',
     ];
 }
