@@ -98,4 +98,13 @@ class TemplatesController extends Controller
         }
         return redirect('/templates')->with('success', 'Data berhasil dihapus');
     }
+    public function show(Request $request)
+    {
+        $result = Templates::where('code',$request->code)->first();
+        if($result){
+            return redirect('/')->with(['success'=>'KODE ORIGINAL','result' => $result]);
+        } else {
+            return redirect('/')->with('error','KODE TIDAK DITEMUKAN');
+        }
+    }
 }
