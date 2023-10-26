@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function login(){
+    public function index(){
         $data = array([
             'title' => 'Login'
         ]);
