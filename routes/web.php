@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('guest');
 });
 
 Route::controller(TemplatesController::class)->group(function () {
@@ -23,4 +23,5 @@ Route::controller(TemplatesController::class)->group(function () {
     Route::post('/templates/create', 'store');
     Route::post('/templates/update/{id}', 'update');
     Route::post('/templates/delete/{id}', 'destroy');
+    Route::get('/templates/guest/{code}', 'show');
 });

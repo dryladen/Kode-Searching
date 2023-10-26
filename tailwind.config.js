@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'coklat-50' : '#F4E8DB',
         'coklat-100': '#C9A68D',
         'coklat-200': '#A17659',
       }

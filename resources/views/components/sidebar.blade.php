@@ -32,7 +32,6 @@
                         <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="{{ url('users') }}"
                         class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
@@ -46,31 +45,30 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}" 
+                    <a href="{{ url('templates') }}"
                         class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        <svg class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-card-list" viewBox="0 0 16 16">
                             <path
                                 d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
                             <path
                                 d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
                         </svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap">Data</span>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Templates</span>
                     </a>
                 </li>
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
-                            <path
-                                d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z" />
-                            <path
-                                d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white bi bi-box-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                            <path fill-rule="evenodd"
+                                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
                         </svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
                     </a>
                 </li>
             </ul>

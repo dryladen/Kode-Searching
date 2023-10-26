@@ -5,7 +5,7 @@
             <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <span class="font-medium">{{ $error }}</span>
+                        <li class="font-medium">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -138,15 +138,13 @@
                         </label>
                         <textarea id="description" name="description" rows="4"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Masukan deskripsi templates...">
-                        </textarea>
+                            placeholder="Masukan deskripsi templates..." required></textarea>
                         <label for="request_letter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Pesan request
                         </label>
                         <textarea id="request_letter" name="request_letter" rows="2"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Masukan pesar request templates...">
-                        </textarea>
+                            placeholder="Masukan pesan request templates..." required>Selamat !! Kode ditemukan</textarea>
                         <button type="submit"
                             class="text-white mt-4 bg-coklat-100 hover:bg-coklat-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Simpan

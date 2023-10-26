@@ -19,7 +19,6 @@ class TemplatesController extends Controller
         );
         return view('data', $data);
     }
-
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -28,8 +27,15 @@ class TemplatesController extends Controller
             'description' => 'required',
             'request_letter' => 'required',
             'author' => 'required'
+        ], [
+            'code.required' => 'Kode wajib memiliki nilai',
+            'code.min' => 'Kode minimal 6 angka',
+            'title' => 'Judul wajib memiliki nilai',
+            'description' => 'Deskripsi wajib memiliki nilai',
+            'request_letter' => 'Pesan Request wajib memiliki nilai',
+            'author' => 'Penerbit wajib memiliki nilai'
         ]);
-        if($validator->fails()) return redirect('templates')->withErrors($validator);
+        if ($validator->fails()) return redirect('templates')->withErrors($validator);
         DB::beginTransaction();
         try {
             Templates::create([
@@ -47,17 +53,25 @@ class TemplatesController extends Controller
         }
         return redirect('/templates')->with('success', 'Data berhasil disimpan');
     }
-    public function update(Request $request,$id){
+    public function update(Request $request, $id)
+    {
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'description' => 'required',
             'request_letter' => 'required',
             'author' => 'required'
+        ], [
+            'code.required' => 'Kode wajib memiliki nilai',
+            'code.min' => 'Kode minimal 6 angka',
+            'title' => 'Judul wajib memiliki nilai',
+            'description' => 'Deskripsi wajib memiliki nilai',
+            'request_letter' => 'Pesan Request wajib memiliki nilai',
+            'author' => 'Penerbit wajib memiliki nilai'
         ]);
-        if($validator->fails()) return redirect('templates')->withErrors($validator);
+        if ($validator->fails()) return redirect('templates')->withErrors($validator);
         DB::beginTransaction();
         try {
-            Templates::where('id',$id)->update([
+            Templates::where('id', $id)->update([
                 'title' => $request->title,
                 'description' => $request->description,
                 'request_letter' => $request->request_letter,
@@ -67,19 +81,20 @@ class TemplatesController extends Controller
         } catch (Exception $e) {
             DB::rollBack();
             return redirect('/templates')
-                ->with('error',$e);
+                ->with('error', $e);
         }
         return redirect('/templates')->with('success', 'Data berhasil diubah');
     }
-    public function destroy($id){
+    public function destroy($id)
+    {
         DB::beginTransaction();
         try {
-            Templates::where('id',$id)->delete();
+            Templates::where('id', $id)->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
             return redirect('/templates')
-                ->with('error',$e);
+                ->with('error', $e);
         }
         return redirect('/templates')->with('success', 'Data berhasil dihapus');
     }
