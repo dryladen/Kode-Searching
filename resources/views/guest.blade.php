@@ -41,7 +41,7 @@
                     class="text-white absolute right-2.5 bottom-2.5 bg-coklat-200 hover:bg-amber-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-r-full text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
             </div>
         </form>
-        {{-- @if (session('result')) --}}
+        @if (session('result'))
             <div class=" flex flex-col gap-4 items-center rounded-lg mt-4 bg-coklat-100">
                 {{-- <span class="font-bold text-lg bg-white px-2 text-green-500 rounded-md">Kode ditemukan</span> --}}
                 <!-- Modal toggle -->
@@ -58,7 +58,7 @@
                     Buka Kode
                 </button>
             </div>
-        {{-- @endif --}}
+        @endif
     </div>
 
 

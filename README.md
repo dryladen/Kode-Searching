@@ -8,27 +8,27 @@
 - Git -> [download](https://git-scm.com/download/win)
 ## First Configuration
 
-### - Clone repository
+#### - Clone repository
 buka git bash di folder yang ingin kalian masukan projek nya, lalu masukan perintah     
 > git clone https://github.com/dryladen/Kode-Searching.git
-### - Masuk ke folder projek
+#### - Masuk ke folder projek
 > cd Kode-Searching
-### - Buat file env
+#### - Buat file env
 buat file .env berdasarkan dari file env.example, caranya jalankan perintah:
->copy .env.example .env
-### - Konfigurasi file env
+>cp .env.example .env
+#### - Konfigurasi file env
 Yang diubah pada file env disini hanyalah nama dari database ``DB_DATABASE=db_templates(dapat diubah)``, jika sudah lalu di ``Save``
-### - Install package
+#### - Install package
  Jalankan perintah berikut di dalam terminal yang mengarah ke folder projek anda:
  > composer install
-### - Generate Key
+#### - Generate Key
 > php artisan key:generate
-### - Migrasi Database
+#### - Migrasi Database
 > php artisan migrate
-### - Data Seeder
+#### - Data Seeder
 Agar tabel users memiliki data awal, dapat jalankan perintah:
 > php artisan db:seed UserSeeder
-### - Install Package Tailwind
+#### - Install Package Tailwind
 > npm install
 
 ## How to run
