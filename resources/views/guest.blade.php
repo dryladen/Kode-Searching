@@ -41,7 +41,7 @@
                     class="text-white absolute right-2.5 bottom-2.5 bg-coklat-200 hover:bg-amber-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-r-full text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
             </div>
         </form>
-        @if (session('result'))
+        {{-- @if (session('result')) --}}
             <div class=" flex flex-col gap-4 items-center rounded-lg mt-4 bg-coklat-100">
                 {{-- <span class="font-bold text-lg bg-white px-2 text-green-500 rounded-md">Kode ditemukan</span> --}}
                 <!-- Modal toggle -->
@@ -58,7 +58,7 @@
                     Buka Kode
                 </button>
             </div>
-        @endif
+        {{-- @endif --}}
     </div>
 
 
@@ -82,10 +82,10 @@
                     </button>
                 </div>
                 <!-- Modal body -->
-                <div class="p-6 space-y-6">
+                <div class="p-6 space-y-6 h-full">
                     <div id="controls-carousel" class="relative w-full" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-56 overflow-hidden rounded-lg md:h-96 ">
+                        <div class="relative h-96 overflow-hidden rounded-lg md:h-96 ">
                             <!-- Item 1 -->
                             <div class="duration-75 ease-in-out flex flex-col gap-4 items-center" data-carousel-item>
                                 <span
@@ -94,7 +94,7 @@
                                     style="background-image: url({{ asset('/images/default.png') }})"></div>
                             </div>
                             <!-- Item 2 -->
-                            <div class="duration-75 ease-in-out flex flex-col gap-4 mb-28 rounded-lg p-4 bg-white"
+                            <div class="duration-75 ease-in-out flex flex-col gap-4 mb-28 rounded-lg p-4 bg-coklat-50"
                                 data-carousel-item>
                                 <span
                                     class="text-center font-bold text-2xl">{{ session('result.title') ?? 'Mystique Special Message' }}</span>
@@ -105,8 +105,8 @@
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-75 ease-in-out" data-carousel-item>
-                                <div class="bg-white p-4 flex flex-col rounded-lg items-end justify-end">
-                                    <span>Diproduksi Oleh : {{ session('result.author') ?? 'Toni' }}</span>
+                                <div class="bg-coklat-50 p-4 flex flex-col rounded-l-full items-end justify-end">
+                                    <span class="font-semibold">Diproduksi Oleh : {{ session('result.author') ?? 'Toni' }}</span>
                                 </div>
                             </div>
                         </div>
