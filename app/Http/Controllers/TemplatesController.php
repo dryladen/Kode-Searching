@@ -17,7 +17,7 @@ class TemplatesController extends Controller
             'title' => 'Templates',
             'data' => Templates::all()
         );
-        return view('data', $data);
+        return view('templates', $data);
     }
     public function store(Request $request)
     {

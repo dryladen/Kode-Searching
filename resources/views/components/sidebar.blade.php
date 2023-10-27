@@ -19,9 +19,9 @@
         <div class="h-full px-3 py-4 overflow-y-auto bg-coklat-100 dark:bg-gray-800">
             <ul class="space-y-2 font-medium ">
                 <li>
-                    <a href="{{ url('/') }}"
-                        class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                    <a href="{{ url('dashboard') }}"
+                        class="flex items-center {{ request()->is('dashboard') ? 'bg-coklat-200 text-white' : ''}} p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
+                        <svg class="w-5 h-5 {{ request()->is('dashboard') ? 'text-white' : ''}} text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 22 21">
                             <path
@@ -34,8 +34,8 @@
                 </li>
                 <li>
                     <a href="{{ url('users') }}"
-                        class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                        class="{{ request()->is('users') ? 'bg-coklat-200 text-white' : ''}} flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
+                        <svg class="{{ request()->is('users') ? ' text-white' : ''}} w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 18">
                             <path
@@ -46,8 +46,8 @@
                 </li>
                 <li>
                     <a href="{{ url('templates') }}"
-                        class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                    class="{{ request()->is('templates') ? 'bg-coklat-200 text-white' : ''}} flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
+                    <svg class="{{ request()->is('templates') ? ' text-white' : ''}} w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-card-list" viewBox="0 0 16 16">
                             <path
@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ url('logout') }}"
                         class="flex items-center p-2 text-slate-900 rounded-lg  dark:text-white hover:bg-coklat-200 hover:text-white transition-all dark:hover:bg-gray-700 group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="w-5 h-5 text-slate-900 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white bi bi-box-arrow-left" viewBox="0 0 16 16">

@@ -18,16 +18,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('guest');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
 Route::get('/login',[UserController::class,'index']);
+Route::post('/login',[UserController::class,'login']);
+Route::get('/templates/search/', [TemplatesController::class,'show']);
 
-Route::controller(TemplatesController::class)->group(function () {
-    Route::get('/templates', 'index');
-    Route::post('/templates/create', 'store');
-    Route::post('/templates/update/{id}', 'update');
-    Route::post('/templates/delete/{id}', 'destroy');
-    Route::get('/templates/search/', 'show');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard',[UserController::class,'dashboard']);
+    Route::controller(TemplatesController::class)->group(function () {
+        Route::get('/templates', 'index');
+        Route::post('/templates/create', 'store');
+        Route::post('/templates/update/{id}', 'update');
+        Route::post('/templates/delete/{id}', 'destroy');
+    });
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/users', 'data');
+        Route::post('/users/create', 'store');
+        Route::post('/users/update/{id}', 'update');
+        Route::post('/users/delete/{id}', 'destroy');
+    });
+    Route::get('/logout',[UserController::class,'logout']);
 });
