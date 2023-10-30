@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset('images/default.png') }}">
+    <link rel="icon" href="{{ asset('images/Logo.jpg') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>{{ $itle ?? 'Guest Page' }}</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.0.7/sweetalert2.min.css" rel="stylesheet">
@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <div class="h-screen w-screen flex flex-col justify-center px-4 sm:px-80 bg-coklat-100">
-        <a class="absolute top-10 right-20 font-bold text-lg text-amber-800 flex items-center gap-2"
+    <div class="h-screen w-screen flex flex-col items-center gap-4 px-4 md:px-32 lg:px-32 xl:px-80  bg-coklat-100">
+        <a class="absolute top-10 right-5 sm:right-10 font-bold text-lg text-amber-800 flex items-center gap-2"
             href="{{ url('login') }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -23,7 +23,11 @@
                     d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
             </svg>Login
         </a>
-        <form action="/templates/search" method="get">
+        <div class="flex w-full justify-center mt-24 bg-white rounded-lg">
+            <div class="h-72 w-72 rounded-lg bg-contain bg-center"
+                style="background-image: url({{ asset('images/Logo.jpg') }})"></div>
+        </div>
+        <form action="/templates/search" method="get" class="w-full">
             <label for="default-search"
                 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div class="relative">
@@ -43,8 +47,6 @@
         </form>
         @if (session('result'))
             <div class=" flex flex-col gap-4 items-center rounded-lg mt-4 bg-coklat-100">
-                {{-- <span class="font-bold text-lg bg-white px-2 text-green-500 rounded-md">Kode ditemukan</span> --}}
-                <!-- Modal toggle -->
                 <button data-modal-target="templates-modal " data-modal-toggle="templates-modal"
                     class="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-coklat-200 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-coklat-200 rounded-lg text-center"
                     type="button">
@@ -90,8 +92,10 @@
                             <div class="duration-75 ease-in-out flex flex-col gap-4 items-center" data-carousel-item>
                                 <span
                                     class="p-6 mx-14 text-center min-w-full flex justify-center font-bold text-lg bg-coklat-50 shadow-lg rounded-lg">{{ session('result.request_letter') ?? 'Selamat kode ditemukan' }}</span>
-                                <div class="h-52 w-52 bg-cover bg-center rounded-full"
-                                    style="background-image: url({{ asset('/images/default.png') }})"></div>
+                                <div class="flex w-full justify-center bg-white rounded-lg">
+                                    <div class="h-52 w-52 rounded-lg bg-contain bg-center"
+                                        style="background-image: url({{ asset('images/Logo.jpg') }})"></div>
+                                </div>
                             </div>
                             <!-- Item 2 -->
                             <div class="duration-75 ease-in-out flex flex-col gap-4 mb-28 rounded-lg p-4 bg-coklat-50"
@@ -106,13 +110,14 @@
                             <!-- Item 3 -->
                             <div class="hidden duration-75 ease-in-out" data-carousel-item>
                                 <div class="bg-coklat-50 p-4 flex flex-col rounded-l-full items-end justify-end">
-                                    <span class="font-semibold">Diproduksi Oleh : {{ session('result.author') ?? 'Toni' }}</span>
+                                    <span class="font-semibold">Diproduksi Oleh :
+                                        {{ session('result.author') ?? 'Toni' }}</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Slider controls -->
                         <button type="button"
-                            class="absolute top-32 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            class="absolute top-40 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                             data-carousel-prev>
                             <span
                                 class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -125,7 +130,7 @@
                             </span>
                         </button>
                         <button type="button"
-                            class="absolute top-32 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            class="absolute top-40 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                             data-carousel-next>
                             <span
                                 class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
